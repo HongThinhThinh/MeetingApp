@@ -43,7 +43,7 @@ const MobileNav = () => {
      text-white
      "
             >
-              Yoom
+              HT MEETING
             </p>
           </Link>
 
