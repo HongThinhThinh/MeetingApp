@@ -1,9 +1,12 @@
 "use client";
 
+import { useUser } from "@clerk/nextjs";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
+  const user = useUser();
+  console.log(user.user);
   const now = new Date();
   const [time, setTime] = useState("");
 
