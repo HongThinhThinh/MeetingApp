@@ -28,6 +28,17 @@ const config = {
         },
         sky: {
           1: "C9DDFF",
+          2: "#ECF0FF",
+          3: "#F5FCFF",
+        },
+        orange: {
+          1: "#FF742E",
+        },
+        purple: {
+          1: "#830EF9",
+        },
+        yellow: {
+          1: "#ccb00a",
         },
       },
       border: "hsl(var(--border))",

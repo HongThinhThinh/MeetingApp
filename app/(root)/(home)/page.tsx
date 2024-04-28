@@ -1,5 +1,6 @@
 "use client";
 
+import MeetingTypeList from "@/components/ui/MeetingTypeList";
 import { useUser } from "@clerk/nextjs";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
@@ -40,6 +41,8 @@ const Home = () => {
           <p className="text-lg font-medium text-sky-1 ">{date}</p>
         </div>
       </div>
+
+      <MeetingTypeList />
     </section>
   );
 };
