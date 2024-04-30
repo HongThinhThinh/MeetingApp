@@ -36,6 +36,7 @@ function MeetingTypeList() {
         return;
       }
       const id = crypto.randomUUID();
+      localStorage.setItem("id", id);
       const call = client.call("default", id);
       if (!call) throw new Error("Failed to create meeting");
       const startsAt =
@@ -92,7 +93,32 @@ function MeetingTypeList() {
         handleClick={() => setMeetingState("isJoiningMeeting")}
         classname="bg-yellow-1 "
       />
-
+      {!callDetail ? (
+        <MeetingModal
+          isOpen={meetingState === "isScheduleMeeting"}
+          onClose={() => setMeetingState(undefined)}
+          title="Create meeting"
+          className="text-center"
+          buttonText="Start meeting"
+          handleClick={createMeeting}
+        >
+          Test
+        </MeetingModal>
+      ) : (
+        <MeetingModal
+          isOpen={meetingState === "isInstantMeeting"}
+          onClose={() => setMeetingState(undefined)}
+          title="Meeting Created"
+          className="text-center"
+          handleClick={() => {
+            navigator.clipboard.writeText(meetingLink);
+            toast({ title: "Link copied" });
+          }}
+          image="/icons/checked,svg"
+          buttonIcon="/icons/copy.svg"
+          buttonText="Coppy Meeting Link"
+        />
+      )}
       <MeetingModal
         isOpen={meetingState === "isInstantMeeting"}
         onClose={() => setMeetingState(undefined)}
