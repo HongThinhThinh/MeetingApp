@@ -5,8 +5,10 @@ import MeetingModal from "./MeetingModal";
 import { useUser } from "@clerk/nextjs";
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useRouter } from "next/navigation";
+import { useToast } from "./use-toast";
 
 function MeetingTypeList() {
+  const { toast } = useToast();
   const [meetingState, setMeetingState] = useState<
     "isScheduleMeeting" | "isJoiningMeeting" | "isInstantMeeting" | undefined
   >(undefined);
@@ -30,7 +32,7 @@ function MeetingTypeList() {
     if (!client || !user) return;
     try {
       if (!values.dateTime) {
-        // toast({ title: 'Please select a date and time' });
+        toast({ title: "Please select a date and time" });
         return;
       }
       const id = crypto.randomUUID();
@@ -51,12 +53,12 @@ function MeetingTypeList() {
       if (!values.description) {
         router.push(`/meeting/${call.id}`);
       }
-      // toast({
-      //   title: 'Meeting Created',
-      // });
+      toast({
+        title: "Meeting Created",
+      });
     } catch (error) {
       console.error(error);
-      // toast({ title: 'Failed to create Meeting' });
+      toast({ title: "Failed to create Meeting" });
     }
   };
 
