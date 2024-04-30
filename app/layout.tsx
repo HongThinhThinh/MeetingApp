@@ -34,7 +34,11 @@ export default function RootLayout({
     >
       <html lang="en">
         <head>
-          <link rel="icon" href="/favicon.ico" />
+          <link
+            rel="icon"
+            href="https://i.pngimg.me/thumb/f/720/m2i8d3m2i8m2b1Z5.jpg"
+            sizes="any"
+          />
         </head>
         <body className={`${inter.className} bg-dark-2`}>
           {children}
