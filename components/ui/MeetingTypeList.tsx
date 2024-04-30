@@ -111,7 +111,7 @@ function MeetingTypeList() {
           title="Meeting Created"
           className="text-center"
           handleClick={() => {
-            navigator.clipboard.writeText(meetingLink);
+            // navigator.clipboard.writeText(meetingLink);
             toast({ title: "Link copied" });
           }}
           image="/icons/checked,svg"
