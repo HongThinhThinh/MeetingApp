@@ -93,7 +93,7 @@ function MeetingTypeList() {
         handleClick={() => setMeetingState("isJoiningMeeting")}
         classname="bg-yellow-1 "
       />
-      {!callDetail ? (
+      {/* {!callDetail ? (
         <MeetingModal
           isOpen={meetingState === "isScheduleMeeting"}
           onClose={() => setMeetingState(undefined)}
@@ -111,14 +111,14 @@ function MeetingTypeList() {
           title="Meeting Created"
           className="text-center"
           handleClick={() => {
-            // navigator.clipboard.writeText(meetingLink);
+            navigator.clipboard.writeText(meetingLink);
             toast({ title: "Link copied" });
           }}
           image="/icons/checked,svg"
           buttonIcon="/icons/copy.svg"
           buttonText="Coppy Meeting Link"
         />
-      )}
+      )} */}
       <MeetingModal
         isOpen={meetingState === "isInstantMeeting"}
         onClose={() => setMeetingState(undefined)}

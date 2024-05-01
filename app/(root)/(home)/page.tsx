@@ -6,8 +6,6 @@ import moment from "moment";
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
-  const user = useUser();
-  console.log(user.user);
   const now = new Date();
   const [time, setTime] = useState("");
 
@@ -34,9 +32,7 @@ const Home = () => {
             Upcomming Meeting at : 12:30 PM
           </h2>
           <div className="flex flex-col gap-2">
-            <h1 className="text-4xl font-extrabold lg:text-7xl lg:text-2xl">
-              {time}
-            </h1>
+            <h1 className="text-4xl font-extrabold lg:text-2xl">{time}</h1>
           </div>
           <p className="text-lg font-medium text-sky-1 ">{date}</p>
         </div>

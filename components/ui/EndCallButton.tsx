@@ -27,7 +27,7 @@ const EndCallButton = () => {
 
           router.push("/");
         }}
-        className="bg-red-500"
+        className="bg-red-500 rounded-[10px]"
       >
         End Call For Everyone
       </Button>
